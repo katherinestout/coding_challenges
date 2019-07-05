@@ -65,7 +65,7 @@ console.log(users);
 
 //constructors 'under the hood'
 
-/*
+
 function User(){
     this.email = email;
     this.name = name;
@@ -80,9 +80,26 @@ User.prototype.logout = function(){
     this.online = false;
     console.log(this.email, "has logged out");
 }
+//...args takes in admin parameters (email and name)
+function Admin(...args){
+ //console.log(args);
+ //applies the User function
+ User.apply(this, args);
+ this.role = "super admin";
+}
+
+//we want to base the admin prototype on the user prototype
+Admin.prototype = Object.create(User.prototype);
+
+//additional functionality to admin
+Admin.prototype.deleteUser = function(){
+
+}
 
 var userOne = new User('one@gmail.com', 'one');
 var userTwo = new User('two@gmail.com', 'two');
+var admin = new Admin('admin@gmail.com', 'admin');
 
-console.log(userOne);
-userTwo.login(); */
+//console.log(userOne);
+//userTwo.login(); 
+//console.log(admin);
