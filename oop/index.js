@@ -61,3 +61,22 @@ console.log(users);
 
 //method chaining
 //userOne.login().updateScore().updateScore().logout();
+
+
+//constructors 'under the hood'
+
+/*
+function User(){
+    this.email = email;
+    this.name = name;
+    this.online = false;
+    this.login = function(){
+        console.log(this.email, 'has logged in');
+    }
+}
+
+var userOne = new User('one@gmail.com', 'one');
+var userTwo = new User('two@gmail.com', 'two');
+
+console.log(userOne);
+userTwo.login(); */
