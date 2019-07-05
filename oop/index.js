@@ -18,12 +18,20 @@ class User {
     constructor(email, name){
         this.email = email;
         this.name = name;
+        this.score = 0;
     }
     login(){
         console.log(this.email, "logged in");
+        return this;
     }
     logout(){
         console.log(this.email, "logged out");
+        return this;
+    }
+    updateScore(){
+        this.score++;
+        console.log(this.email, "score is now", this.score);
+        return this;
     }
 }
 
@@ -31,5 +39,8 @@ class User {
 var userOne = new User('ryu@ninjas.com', 'Ryu');
 var userTwo = new User('kat@ninjas.com', 'Kat');
 
-userOne.login();
-userTwo.logout();
+//userOne.login();
+//userTwo.logout();
+
+//method chaining
+userOne.login().updateScore().updateScore().logout();
