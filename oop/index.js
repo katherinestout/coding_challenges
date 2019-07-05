@@ -35,12 +35,29 @@ class User {
     }
 }
 
+//class inheritance
+class Admin extends User {
+//if u is equal to user/email we gave, will delete, return false
+//if not, will return true
+    deleteUser(user){
+        users = users.filter( u => {
+            return u.email != user.email;
+        })
+    }
+}
+
 //'new' keyword creates new empty object & sets value of 'this' to new empty object
 var userOne = new User('ryu@ninjas.com', 'Ryu');
 var userTwo = new User('kat@ninjas.com', 'Kat');
+var admin = new Admin('zu@ninjas.com', 'Zu');
+
+var users = [userOne, userTwo, admin];
+
+admin.deleteUser(userOne);
+console.log(users);
 
 //userOne.login();
 //userTwo.logout();
 
 //method chaining
-userOne.login().updateScore().updateScore().logout();
+//userOne.login().updateScore().updateScore().logout();
