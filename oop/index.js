@@ -65,7 +65,7 @@ console.log(users);
 
 //constructors 'under the hood'
 
-
+/*
 function User(){
     this.email = email;
     this.name = name;
@@ -80,6 +80,7 @@ User.prototype.logout = function(){
     this.online = false;
     console.log(this.email, "has logged out");
 }
+
 //...args takes in admin parameters (email and name)
 function Admin(...args){
  //console.log(args);
@@ -93,13 +94,21 @@ Admin.prototype = Object.create(User.prototype);
 
 //additional functionality to admin
 Admin.prototype.deleteUser = function(){
+users = users.filter(user => {
+    return user.email != u.email;
+});
+};
 
-}
+//admin.deleteUser(users[1]);
 
 var userOne = new User('one@gmail.com', 'one');
 var userTwo = new User('two@gmail.com', 'two');
 var admin = new Admin('admin@gmail.com', 'admin');
 
+var users = [userOne, userTwo, admin];
+
 //console.log(userOne);
 //userTwo.login(); 
 //console.log(admin);
+
+*/
